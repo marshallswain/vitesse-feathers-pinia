@@ -8,10 +8,15 @@
     "lint": "eslint \"**/*.{vue,ts,js}\""
   },
   "dependencies": {
+    "@feathersjs/authentication-client": "^4.5.11",
+    "@feathersjs/feathers": "^4.5.11",
+    "@feathersjs/rest-client": "^4.5.11",
     "@vueuse/core": "^6.5.3",
     "@vueuse/head": "^0.6.0",
+    "feathers-hooks-common": "^5.0.6",
+    "feathers-pinia": "^0.13.23",
     "nprogress": "^0.2.0",
-    "pinia": "^2.0.0-rc.9",
+    "pinia": "^2.0.0-rc.10",
     "prism-theme-vars": "^0.2.2",
     "vue": "^3.2.19",
     "vue-demi": "^0.11.4",

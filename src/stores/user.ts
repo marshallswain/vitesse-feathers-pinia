@@ -1,34 +1,13 @@
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { acceptHMRUpdate } from 'pinia'
+import { api } from '../feathers'
+import { defineStore, BaseModel } from './pinia.store'
 
-export const useUserStore = defineStore('user', () => {
-  /**
-   * Current named of the user.
-   */
-  const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+export class User extends BaseModel {}
 
-  const usedNames = computed(() => Array.from(previousNames.value))
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+const servicePath = 'users'
+export const useUserStore = defineStore({ servicePath, Model: User })
 
-  /**
-   * Changes the current name of the user and saves the one that was used
-   * before.
-   *
-   * @param name - new name to set
-   */
-  function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
-
-    savedName.value = name
-  }
-
-  return {
-    setNewName,
-    otherNames,
-    savedName,
-  }
-})
+api.service(servicePath).hooks({})
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useUserStore as any, import.meta.hot))
