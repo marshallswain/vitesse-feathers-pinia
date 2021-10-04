@@ -1,6 +1,7 @@
-import { defineConfig } from 'windicss/helpers'
+import { defineConfig, transform } from 'windicss/helpers'
 import colors from 'windicss/colors'
 import typography from 'windicss/plugin/typography'
+import daisyColors from 'daisyui/colors/index'
 
 export default defineConfig({
   darkMode: 'class',
@@ -9,9 +10,13 @@ export default defineConfig({
 
   plugins: [
     typography(),
+    transform('daisyui'),
   ],
   theme: {
     extend: {
+      colors: {
+        ...daisyColors,
+      },
       typography: {
         DEFAULT: {
           css: {
