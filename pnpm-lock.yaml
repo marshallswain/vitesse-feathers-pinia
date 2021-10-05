@@ -19,12 +19,14 @@ specifiers:
   daisyui: ^1.14.2
   eslint: ^7.32.0
   feathers-hooks-common: ^5.0.6
-  feathers-pinia: ^0.13.23
+  feathers-memory: ^4.1.0
+  feathers-pinia: ^0.15.1
   https-localhost: ^4.7.0
+  lodash: ^4.17.21
   markdown-it-link-attributes: ^3.0.0
   markdown-it-prism: ^2.2.1
   nprogress: ^0.2.0
-  pinia: ^2.0.0-rc.10
+  pinia: ^2.0.0-rc.11
   pnpm: ^6.16.0
   prism-theme-vars: ^0.2.2
   typescript: ^4.4.3
@@ -53,9 +55,11 @@ dependencies:
   '@vueuse/head': 0.6.0_vue@3.2.19
   daisyui: 1.14.2
   feathers-hooks-common: 5.0.6
-  feathers-pinia: 0.13.23_pinia@2.0.0-rc.10+vue@3.2.19
+  feathers-memory: 4.1.0
+  feathers-pinia: 0.15.1_pinia@2.0.0-rc.11+vue@3.2.19
+  lodash: 4.17.21
   nprogress: 0.2.0
-  pinia: 2.0.0-rc.10_typescript@4.4.3+vue@3.2.19
+  pinia: 2.0.0-rc.11_typescript@4.4.3+vue@3.2.19
   prism-theme-vars: 0.2.2
   vue: 3.2.19
   vue-demi: 0.11.4_vue@3.2.19
@@ -1364,6 +1368,17 @@ packages:
   /@feathers-plus/batch-loader/0.3.6:
     resolution: {integrity: sha512-r+n31iZ/B5Rl1mLkC9/S20UI445MdkZvE3VBmjupep2t8OuyTYHPkFEgR25HY6khH+RothK1VL3B5eumk9N2QQ==}
     engines: {node: '>= 6.0.0'}
+    dev: false
+
+  /@feathersjs/adapter-commons/4.5.11:
+    resolution: {integrity: sha512-qJ+P/6GLR3KfXhzgRkvl3p66YmaTxLO1js1Jzs+d5QnnUYx+jWSV7tzYVZoVjQSlF8ht/zh9N5qfh0RV9w1E+w==}
+    engines: {node: '>= 10'}
+    dependencies:
+      '@feathersjs/commons': 4.5.11
+      '@feathersjs/errors': 4.5.11
+      '@feathersjs/feathers': 4.5.11
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@feathersjs/adapter-commons/5.0.0-pre.9:
@@ -3648,8 +3663,20 @@ packages:
       - supports-color
     dev: false
 
-  /feathers-pinia/0.13.23_pinia@2.0.0-rc.10+vue@3.2.19:
-    resolution: {integrity: sha512-VuoGODaTogruojoA6oiLs7Vls9HGPzcLr58JZvIODlR+MDweqzvzM8iyp+4Fz0MkHkLhLmuYyku3reqA2oftkg==}
+  /feathers-memory/4.1.0:
+    resolution: {integrity: sha512-tR8DFqLsSk2w7tpSdHjA5RgPHTu3X5R3L3Kob2K+E3b/Q5cDkI6AYQarDQOiwekAyqxkkp/fm7Fg0qYdu4Ua6Q==}
+    engines: {node: '>= 8'}
+    dependencies:
+      '@feathersjs/adapter-commons': 4.5.11
+      '@feathersjs/commons': 4.5.11
+      '@feathersjs/errors': 4.5.11
+      sift: 8.5.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /feathers-pinia/0.15.1_pinia@2.0.0-rc.11+vue@3.2.19:
+    resolution: {integrity: sha512-/HAIDI4qgy14EISJVVoD7zYaZ8dha1mePvmL02SS42By5SGk59+XFKivkbZlKQFrXNUXogLPx3s0aT5hCloTDA==}
     peerDependencies:
       '@vue/composition-api': '*'
       pinia: ^2.0.0-beta.5
@@ -3669,7 +3696,7 @@ packages:
       just-debounce: 1.1.0
       lodash: 4.17.21
       lz-string: 1.4.4
-      pinia: 2.0.0-rc.10_typescript@4.4.3+vue@3.2.19
+      pinia: 2.0.0-rc.11_typescript@4.4.3+vue@3.2.19
       sift: 14.0.3
       vue: 3.2.19
     dev: false
@@ -5137,8 +5164,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pinia/2.0.0-rc.10_typescript@4.4.3+vue@3.2.19:
-    resolution: {integrity: sha512-WY0KQoHxSBylhGc6aBQKPFfAupYHWpI1QBQKJSyK9btwwMTVQpwCdePgPho+ZoEMl832jb7RwfI5TN1srV5VEA==}
+  /pinia/2.0.0-rc.11_typescript@4.4.3+vue@3.2.19:
+    resolution: {integrity: sha512-JJinfdMn52Id5/+rOJXP4zRszuiOlunEoVt8gYMneAZ8IyXKPvw9/Cu+HztB+53dHyNM7GdjX+uhjKBNs31tvQ==}
     peerDependencies:
       '@vue/composition-api': ^1.2.2
       typescript: ^4.4.3
@@ -5760,6 +5787,10 @@ packages:
 
   /sift/14.0.3:
     resolution: {integrity: sha512-zsQnIcPs6yI8YSdJqPG9Cp2dGm3A1nNBVBn9Opg/ICskrdeEUVC/2AjjuD8DNdWMG2ujeMbB7xCKZO2OUU8bGQ==}
+    dev: false
+
+  /sift/8.5.1:
+    resolution: {integrity: sha512-um2rEdXrc4YcRMzIliuip4i2o92mJONh5W1VD9vJlm1e0apVqMK4P2ZUijz8BIe1/oYLWmXwXaKFM+fOaO3Ysg==}
     dev: false
 
   /signal-exit/3.0.4:

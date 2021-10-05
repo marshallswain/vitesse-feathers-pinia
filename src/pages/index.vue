@@ -32,6 +32,7 @@ const { t } = useI18n()
     <input
       id="input"
       v-model="name"
+      class="input"
       :placeholder="t('intro.whats-your-name')"
       :aria-label="t('intro.whats-your-name')"
       type="text"

@@ -7,9 +7,8 @@ body,
   margin: 0;
   padding: 0;
 }
-
-html.dark {
-  background: #121212;
+html, body {
+  @apply text-base-content bg-base-100 p-0 m-0 h-full w-full;
 }
 
 #nprogress {

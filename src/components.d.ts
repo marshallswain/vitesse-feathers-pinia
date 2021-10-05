@@ -12,8 +12,14 @@ declare module 'vue' {
     CarbonPedestrian: typeof import('~icons/carbon/pedestrian')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
     CarbonWarning: typeof import('~icons/carbon/warning')['default']
+    FeatherArrowLeft: typeof import('~icons/feather/arrow-left')['default']
+    FeatherExternalLink: typeof import('~icons/feather/external-link')['default']
+    FeatherPlus: typeof import('~icons/feather/plus')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     README: typeof import('./components/README.md')['default']
+    UserForm: typeof import('./components/UserForm.vue')['default']
+    UserQuickCreate: typeof import('./components/UserQuickCreate.vue')['default']
+    UserRow: typeof import('./components/UserRow.vue')['default']
   }
 }
 
